@@ -1,0 +1,35 @@
+﻿{
+    "configs": {
+        "field_row": 0,
+        "type_row": 1,
+        "data_from_row": 3
+    },
+    "excels": [
+        {
+            "excel_name": "Excel/TileDataConfig.xlsx",
+            "script_directory": "Assets/Scripts/Config/Game",
+            "asset_directory": "Assets/RawResources/Config/Game",
+            "name_space": "",
+            "use_hash_string": false,
+            "hide_asset_properties": false,
+            "use_public_items_getter": false,
+            "compress_color_into_int": true,
+            "treat_unknown_types_as_enum": false,
+            "generate_tostring_method": true,
+            "slaves": []
+        },
+        {
+            "excel_name": "Excel/MapDataConfig.xlsx",
+            "script_directory": "Assets/Scripts/Config/Game",
+            "asset_directory": "Assets/RawResources/Config/Game",
+            "name_space": "",
+            "use_hash_string": false,
+            "hide_asset_properties": false,
+            "use_public_items_getter": false,
+            "compress_color_into_int": true,
+            "treat_unknown_types_as_enum": false,
+            "generate_tostring_method": true,
+            "slaves": []
+        }
+    ]
+}
