@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 public class MapManager : BaseManager<MapManager>
 {
@@ -80,7 +81,7 @@ public class MapManager : BaseManager<MapManager>
         var edge = new List<Vector2Int>();
         edge.AddRange(GetNeighbors4(result[0]));
 
-        var random = new Random(233333);
+        var random = new System.Random(233333);
         for(int i = 1; i < count; i++)
         {
             var curr = edge[random.Next(0, edge.Count)];
