@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LoadWorldRoot();
+        LoadUIRoot();
         ModuleManager.Instance.RegisterModules();
     }
 
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
     {
         WorldRoot = LoadManager.Instance.LoadPrefab("Prefab/Root/WorldRoot.prefab");
         GameObject.DontDestroyOnLoad(WorldRoot);
+    }
+
+    void LoadUIRoot()
+    {
+        UIManager.Instance.CreateUIRoot();
     }
 
     public void RegisterManager(BaseManager manager)

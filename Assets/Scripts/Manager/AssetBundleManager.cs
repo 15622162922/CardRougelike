@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using UnityEditor;
+using UnityEngine.Networking;
 
 public class AssetBundleManager : BaseManager<AssetBundleManager>
 {
@@ -50,10 +51,10 @@ public class AssetBundleManager : BaseManager<AssetBundleManager>
 
     public void LoadPrefabAsync(string path, Transform parent, Action<GameObject> callback)
     {
-
+        
     }
 
-    #region ·Ç±©Â¶½Ó¿Ú
+    #region ï¿½Ç±ï¿½Â¶ï¿½Ó¿ï¿½
     AssetBundle GetAssetBundle(string path)
     {
         string directoryPath = GetAssetBundleNameFromPath(path);

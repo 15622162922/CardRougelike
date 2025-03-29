@@ -201,7 +201,7 @@ public class PropsProxyInspector : Editor
                 return System.Type.GetType(NameKeys[firStr]);
             }
         }
-        return null;
+        return typeof(GameObject);
     }
 
     private void AddChildToProxy(GameObject obj)
@@ -339,6 +339,6 @@ public class PropsProxyInspector : Editor
                 }
             }
         }
-        return null;
+        return "GameObject";
     }
 }

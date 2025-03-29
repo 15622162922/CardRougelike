@@ -86,7 +86,7 @@ public class LoadManager : BaseManager<LoadManager>
         return request.asset as T;
     }
 
-    #region ·Ç±©Â¶½Ó¿Ú
+    #region ï¿½Ç±ï¿½Â¶ï¿½Ó¿ï¿½
 
     public void LoadAsset(AssetRequest request)
     {
