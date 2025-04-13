@@ -13,6 +13,17 @@ public static class UIConst
         Top, //最顶层覆盖
     }
 
+    public static Dictionary<UILayer, int> BaseSortingOrder = new Dictionary<UILayer, int>()
+    {
+        [UILayer.Bottom] = 1000,
+        [UILayer.Page] = 2000,
+        [UILayer.Popup] = 3000,
+        [UILayer.Tips] = 4000,
+        [UILayer.Top] = 5000,
+    };
+
+    public static int SortingOrderInterval = 50;
+
     public static Dictionary<string, UIConfigStruct> UIConfig = new Dictionary<string, UIConfigStruct>()
     {
         ["UITestLoginView"] = new UIConfigStruct(){PrefabPath = "", Layer = UILayer.Page},

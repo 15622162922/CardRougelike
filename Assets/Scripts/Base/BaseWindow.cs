@@ -31,45 +31,63 @@ public abstract class BaseWindow
         
     }
 
-    /// <summary>
-    /// 从外部新打开时执行一次
-    /// </summary>
-    /// <param name="args"></param>
-    protected virtual void OnRefresh(params object[] args)
+    protected virtual void OnSortingOrderUpdate(int sortingOrder)
     {
         
     }
 
     public GameObject gameObject;
     public string windowName;
+    public int sortingOrder;
+
+    public bool isEnabled;
     
     public void Bind(GameObject go)
     {
         gameObject = go;
     }
 
-    public void CallOnOpen()
+    public void SetSortingOrder(int sortingOrder)
     {
+        this.sortingOrder = sortingOrder;
+        var canvas = gameObject.GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.sortingOrder = sortingOrder;
+            CallSortingOrderUpdate(sortingOrder);
+        }
+    }
+
+    public void CallOnOpen(params object[] args)
+    {
+        OnOpen(args);
         
+        OnEnable();
     }
 
     public void CallOnClose()
     {
+        OnDisable();
         
+        OnClose();
     }
 
     public void CallOnEnable()
     {
+        isEnabled = true;
         
+        OnEnable();
     }
 
     public void CallOnDisable()
     {
+        isEnabled = false;
         
+        OnDisable();
     }
 
-    public void CallOrderLayerUpdate(int sortingLayer)
+    public void CallSortingOrderUpdate(int sortingOrder)
     {
-        
+        OnSortingOrderUpdate(sortingOrder);
     }
 }
