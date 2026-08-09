@@ -1,19 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class StoryModule : BaseModule
 {
-    StoryEventManager storyEventManager;
-    
-    public override void Register()
+    private StoryEventManager storyEventManager;
+
+    protected override void OnInit()
     {
         RegisterController();
     }
 
-    public override void UnRegister()
+    protected override void OnRelease()
     {
-        
     }
 
     public void RegisterController()
@@ -26,11 +21,9 @@ public class StoryModule : BaseModule
 
     public void PlayTestStory()
     {
-
     }
 
     public void PlayStory(string storyId)
     {
-
     }
 }

@@ -1,34 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterModule : BaseModule<CharacterModule>
 {
-    GameObject CharacterRoot;
-    GameObject Test_Player;
-    CharacterController controller;
-    PlayerCamera playerCamera;
-    public override void Register()
+    private GameObject CharacterRoot;
+    private CharacterController controller;
+    private PlayerCamera playerCamera;
+    private GameObject Test_Player;
+
+    protected override void OnInit()
     {
-        base.Register();
+        base.OnInit();
 
         LoadCharacterRoot();
         CreateTestPlayer();
     }
 
-    public override void UnRegister()
+    protected override void OnRelease()
     {
-        base.UnRegister();
+        base.OnRelease();
     }
 
-    void LoadCharacterRoot()
+    private void LoadCharacterRoot()
     {
         CharacterRoot = GameManager.Instance.WorldRoot.GetProp("ObjectRoot");
     }
 
     public void CreateTestPlayer()
     {
-        Debug.Log("´´½¨²âÊÔ½ÇÉ«");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½É«");
         Test_Player = LoadManager.Instance.LoadPrefab("Prefab/Character/Test_Player.prefab", CharacterRoot.transform);
         controller = new CharacterController();
         controller.BindingPlayer(Test_Player);

@@ -6,6 +6,7 @@
 
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public partial class MapDataConfig : ScriptableObject {
 
@@ -14,6 +15,13 @@ public partial class MapDataConfig : ScriptableObject {
 
 	[SerializeField]
 	private MapData[] _MapDataItems;
+	public int GetMapDataItems(List<MapData> items) {
+		int len = _MapDataItems.Length;
+		for (int i = 0; i < len; i++) {
+			items.Add(_MapDataItems[i].Init(mVersion, DataGetterObject));
+		}
+		return len;
+	}
 
 	public MapData GetMapData(int id) {
 		int min = 0;

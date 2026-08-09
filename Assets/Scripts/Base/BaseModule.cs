@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
-
-
 public class BaseModule<T> : BaseModule where T : BaseModule<T>, new()
 {
     private static BaseModule _module;
@@ -12,24 +6,39 @@ public class BaseModule<T> : BaseModule where T : BaseModule<T>, new()
     {
         get
         {
-            if (_module == null)
-            {
-                _module = new T();
-            }
+            if (_module == null) _module = new T();
             return _module;
         }
     }
 }
 
-public class BaseModule 
+public class BaseModule
 {
-    public virtual void Register()
+    public void Register()
     {
-    
+        OnRegisterHandler();
+        OnInit();
     }
 
-    public virtual void UnRegister()
+    public void UnRegister()
     {
-    
+        OnUnRegisterHandler();
+        OnRelease();
+    }
+
+    protected virtual void OnInit()
+    {
+    }
+
+    protected virtual void OnRelease()
+    {
+    }
+
+    protected virtual void OnRegisterHandler()
+    {
+    }
+
+    protected virtual void OnUnRegisterHandler()
+    {
     }
 }

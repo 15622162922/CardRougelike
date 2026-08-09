@@ -16,7 +16,12 @@
             "compress_color_into_int": true,
             "treat_unknown_types_as_enum": false,
             "generate_tostring_method": true,
-            "slaves": []
+            "slaves": [
+                {
+                    "excel_name": "",
+                    "asset_directory": "Assets"
+                }
+            ]
         },
         {
             "excel_name": "Excel/MapDataConfig.xlsx",
@@ -25,7 +30,7 @@
             "name_space": "",
             "use_hash_string": false,
             "hide_asset_properties": false,
-            "use_public_items_getter": false,
+            "use_public_items_getter": true,
             "compress_color_into_int": true,
             "treat_unknown_types_as_enum": false,
             "generate_tostring_method": true,
